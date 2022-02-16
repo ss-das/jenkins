@@ -1,0 +1,37 @@
+pipeline{
+         agent any
+         stages{
+                stage('compile'){
+                steps{
+                git branch: "master", url: 'https://github.com/ss-das/jenkins.git'
+                }
+                }
+                
+                stage('build'){
+                steps{
+                sh 'echo build is successful'
+                }
+                }
+                
+                stage('test'){
+                steps{
+                sh 'echo test is successful'
+                }
+                }
+                
+                stage('package'){
+                steps{
+                sh 'echo packaging is done, ready to deploy'
+                }
+                }
+                
+                stage('deploy'){
+                steps{
+                sh 'echo deployed successfully'
+                }
+                }
+         
+                
+         }
+
+}
